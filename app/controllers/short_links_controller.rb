@@ -23,6 +23,7 @@ class ShortLinksController < ApplicationController
   def show
     if params[:short_code]
       @short_link = ShortLink.find_by(short_code: params[:short_code])
+      redirect_to root_path, alert: "#{params[:short_code]} is not a valid Shortcode" unless @short_link
     else
       @short_link = ShortLink.find(params[:id])
     end
