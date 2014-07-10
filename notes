@@ -1,0 +1,7 @@
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+rails generate rspec:install
+rm -rf test
+rails g rspec:feature create_short_link

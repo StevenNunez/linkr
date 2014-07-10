@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate!
-    redirect_to new_session_path, notice: "You must log in before creating a shortlink" unless signed_in?
+    redirect_to new_session_path, notice: "You must be logged in to create a Shortlink" unless signed_in?
   end
 end

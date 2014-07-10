@@ -10,7 +10,7 @@ class ShortLinksController < ApplicationController
 
     @short_link = current_user.short_links.new(short_link_params)
     if @short_link.save
-      redirect_to @short_link, notice: "New link has been created"
+      redirect_to @short_link, notice: "New Shortlink has been created"
     else
       render :new
     end
@@ -19,7 +19,7 @@ class ShortLinksController < ApplicationController
   def index
     @short_links = current_user.short_links
   end
-  
+
   def show
     if params[:short_code]
       @short_link = ShortLink.find_by(short_code: params[:short_code])
