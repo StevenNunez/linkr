@@ -1,0 +1,5 @@
+<h1>Create a new link for shortening</h1>
+<%= form_for @short_link do |f| %>
+  <%= f.url_field :original_link %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Short Link history</h1>
+<ul>
+  <% @short_links.each do |short_link| %>
+  <li>Shortlink for <%= short_link.original_link %>: <%= link_to short_link.shortened_link, short_link.shortened_link %></li>
+  <% end %>
+</ul>

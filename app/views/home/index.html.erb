@@ -1,0 +1,19 @@
+<section class="jumbotron">
+  <h1>Join this year's hottest link shortener!</h1>
+  <h2>Create an account</h2>
+  <div class="row">
+    <%= form_tag '/registrations' do %>
+    <div class="col-xs-3">
+      <%= text_field_tag :username, nil, placeholder: "Create a Username", class: "form-control" %>
+    </div>
+    <div class="col-xs-3">
+      <%= password_field_tag :password, nil, placeholder: "Create a Password", class: "form-control" %>
+    </div>
+    <div class="col-xs-3">
+      <%= submit_tag "Create an account", class: "btn btn-success" %>
+    </div>
+    <% end %>
+  </div>
+  <p>Don't miss out!</p>
+  <%= link_to "Create a new link", new_short_link_path %>
+</section>

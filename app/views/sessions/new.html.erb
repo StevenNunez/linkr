@@ -1,0 +1,14 @@
+<h1>Log in</h1>
+<%= form_tag '/sessions' do %>
+<fieldset>
+  <div id="username">
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+  </div>
+  <div id="password">
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <%= submit_tag "Log in", class: 'btn btn-success' %>
+</fieldset>
+<% end %>

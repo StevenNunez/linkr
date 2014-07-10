@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <nav>
+    <%= link_to "Linkr", root_path %>
+    <div>
+      <% if signed_in? %>
+        <%= link_to "Sign out", signout_path, method: :delete %>
+      <% else %>
+        <%= link_to "Log in", new_session_path %> or <%= link_to "Sign Up", root_path %>
+      <% end %>
+    </div>
+  </nav>
+  <main class="container">
+    <% if notice %>
+      <p class="alert alert-success alert-dismissable"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger alert-dismissable"><%= alert %></p>
+    <% end %>
+    <%= yield %>
+  </main>
 </body>
 </html>
